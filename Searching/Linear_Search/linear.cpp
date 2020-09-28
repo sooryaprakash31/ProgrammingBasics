@@ -8,9 +8,7 @@ int main()
     cin >> n;
     cout << "Enter the array elements ";
     for (auto i = 0; i < n; i++)
-    {
         cin >> arr[i];
-    }
     cout << "Enter the key ";
     cin >> key;
     for (auto i = 0; i < n; i++)
