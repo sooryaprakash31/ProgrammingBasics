@@ -1,5 +1,6 @@
-#selection sort
 '''
+Selection Sort:
+
 Selects the minimum element from the unsorted array everytime 
 and inserts it in the beginning
 '''
@@ -12,4 +13,4 @@ for i in range(len(arr)):
             min = j
     # Swapping minimum element with the element at first
     arr[i],arr[min]=arr[min],arr[i]
-print("Sorted array", arr)
+print("Sorted array:", arr)

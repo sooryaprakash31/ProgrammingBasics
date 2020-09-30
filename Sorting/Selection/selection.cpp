@@ -1,4 +1,6 @@
 /*
+Selection Sort:
+
 Selects the minimum element from the unsorted array everytime 
 and inserts it in the beginning
 */
@@ -15,9 +17,9 @@ int main(){
     int *arr;
     int n;
     int min;
-    cout << "Enter the length of array ";
+    cout << "Enter the number of elements: ";
     cin >> n;
-    cout << "Enter the array elements ";
+    cout << "Enter the Array elements: ";
     for (auto i = 0; i < n; i++)
         cin >> arr[i];
     for(auto i=0; i<n;i++){
@@ -30,7 +32,7 @@ int main(){
         //Swapping minimum element with the element at first
         swap(arr[i],arr[min]);
     }
-    cout<< "Sorted array"<<endl;
+    cout<< "Sorted Array: ";
     for (auto i = 0; i < n; i++)
         cout<< arr[i]<<" ";
     return 0;
