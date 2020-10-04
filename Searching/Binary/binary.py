@@ -11,6 +11,7 @@ Repeats this process recursively
 - Works only with sorted array inputs
 '''
 
+#binary search method
 def binary_search(arr,l,h,key):
     
     #Always l must be less than h, 
@@ -32,16 +33,16 @@ def binary_search(arr,l,h,key):
         else:
             return binary_search(arr,mid+1,h,key)
 
-    #if l is greater than h, it means all elements have been compared
+    #if l is greater than h, it means all elements have been compared with key
     else:
-        return 0
+        return -1
 
 arr=list(map(int,input("Enter array ").split()))
 key=int(input("Enter key "))
 
 #calling binary_search function
 result=binary_search(arr,0,len(arr)-1,key)
-if result==0:
+if result==-1:
     print("Not found")
 else:
     print("Key found at position ",result+1)
