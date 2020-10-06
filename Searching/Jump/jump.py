@@ -42,4 +42,4 @@ result = jump_search(arr,key)
 if result ==-1:
     print("Key not found")
 else:
-    print("Key found at position",result)
+    print("Key found at position",result+1)
