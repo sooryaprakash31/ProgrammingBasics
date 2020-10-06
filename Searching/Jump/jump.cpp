@@ -9,44 +9,31 @@ iii) Jumps back to the previous jump point and performs linear search
 
 #include <iostream>
 #include <math.h>
+#include <algorithm>
 using namespace std;
 
 int jump_search(int arr[], int n, int key)
 {
-
     //setting jump value
-    int jump = sqrt(n);
-    int i = 0, j = 0;
-    while (i < n)
-    {
-
-        //if the element is lesser than key, jump j steps
-        if (arr[i] < key)
-        {
-            i += jump;
-            continue;
-        }
-
-        //if element is greater than key, jump back j steps
-        else if (arr[i] > key)
-        {
-            i = i - jump;
-            break;
-        }
-
-        //if element is equal to key, return i
-        else
-        {
-            return i;
+    int j = sqrt(n);
+    int i = 0;
+    int prev=0, step=j;
+    
+    //runs until the arr[i] is greater than key
+    while(arr[min(step,n)-1]<key){
+        prev=step;
+        step+=j;
+        if(prev>=n){
+            return -1;
         }
     }
 
-    //perform linear search from the closer jump point
-    for (int j = i; j < i + jump; j++)
-    {
-        if (arr[j] == key)
-        {
-            return j;
+    //performs linear search for the particular block
+    //i.e the previous jump point till the point with
+    //element greater than key
+    for(i=prev;i<=step;i++){
+        if(arr[i]==key){
+            return i;
         }
     }
     return -1;
