@@ -8,7 +8,7 @@ ii) if the key is lesser than middle element,
     compares key with the middle element of the left block
 Repeats this process recursively
 
-- Works only with sorted array inputs
+- Requires sorted array
 '''
 
 #binary search method

@@ -5,6 +5,8 @@ i) Picks a jump value j (square root of length of array - n)
 ii) Jumps ahead in every iteration skipping j indices until 
     finds the element greater than the key
 iii) Jumps back to the previous jump point and performs linear search
+
+- Requires sorted array
 '''
 
 from math import sqrt
