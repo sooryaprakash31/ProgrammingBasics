@@ -1,3 +1,12 @@
+/*
+Linear Search:
+
+- Compares every element with the key and 
+  returns the index if the check is successful
+- Simplest searchin algorithm
+*/
+
+
 #include <iostream>
 using namespace std;
 int main()
