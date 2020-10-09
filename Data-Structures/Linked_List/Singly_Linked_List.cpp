@@ -59,19 +59,55 @@ class SinglyLinkedList{
         else{
             Node *ptr = head;
             int count=1;
-            while(count!=pos){
+            if(pos==0){
+                node->next=head;
+                head=node;
+                cout<<"Inserted\n";
+            }
+            else{
+                while(count!=pos){
                 ptr=ptr->next;
                 if(ptr==NULL){
                     cout<<"Position does not exist\n";
                     return;
                 }
                 count++;
+                }
+                node->next = ptr->next;
+                ptr->next=node;
+                cout<<"Inserted! \n";
             }
-        
-            node->next = ptr->next;
-            ptr->next=node;
-            cout<<"Inserted! \n";
+            
         }
+    }
+
+    //deletes the node at a position
+    void deleteNode(int pos){
+        if(head==NULL){
+            cout<<"Position does not exist\n";
+        }
+        else{
+            int count=1;
+            Node *ptr = head;
+                if(pos==0){
+                    head=head->next;
+                    cout<<"Deleted!\n";
+                    return;
+                }else{
+                    while(count!=pos){
+                    ptr=ptr->next;
+                    if(ptr==NULL){
+                        cout<<"Position does not exist\n";
+                        return;
+                    }
+                    count++;
+                    }
+                    ptr->next=ptr->next->next;
+                    cout<<"Deleted! \n";
+                }
+                
+        }
+
     }
 
     //prints all the nodes
@@ -97,9 +133,10 @@ int main(){
     int data, choice;
 
     do{
-        cout<<"\n1.Append\t2.Prepend\t3.InsertAt\t4.PrintAll\t6.Stop\n";
+        cout<<"\n1.Append\t2.Prepend\t3.InsertAt\t4.DeleteAt\t5.PrintAll\t6.Stop\n";
         cin>>choice;
         Node * node = new Node();
+        int position;
         switch (choice)
         {
         case 1:
@@ -113,7 +150,6 @@ int main(){
             s.prependNode(node);
             break;
         case 3:
-            int position;
             cout<<"\nEnter data: ";
             cin>>node->data;
             cout<<"\nEnter position: ";
@@ -121,6 +157,11 @@ int main(){
             s.insertNodeAt(node,position);
             break;
         case 4:
+            cout<<"Enter position: ";
+            cin>>position;
+            s.deleteNode(position);
+            break;
+        case 5:
             s.printAll();
             break;
         case 6:
