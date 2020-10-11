@@ -5,12 +5,13 @@ This repository contains the implementations of common Data structures and algor
 
 ## Languages
 
-- c++
-- python
+- C++
+- Python
 
 ## Data Structures
 - Linked List
   - Singly Linked List
+- Stack
 
 ## Algorithms
 
