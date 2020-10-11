@@ -1,3 +1,17 @@
+/*
+Stack:
+
+- A linear data structure which follows a particular order in which
+the operations are performed.
+- LIFO (Last In First Out)
+
+Representation:
+
+Access--> Node 2 ---------------------------- |-> data|next
+          Node 1 ------------- |-> data|next -|     
+          Node 0 -- data|next -|
+*/
+
 #include<iostream>
 using namespace std;
 
