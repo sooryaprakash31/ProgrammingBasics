@@ -1,3 +1,18 @@
+'''
+Linked List:
+
+A linear data structure in which the elements are not stored in
+contiguous memory locations. 
+
+Representation:
+    data|next--> data|next--> data|next
+
+Advantage:
+    - Dynamic size
+    - Memory allocated during runtime and not compile time
+    - Efficient memory utilization
+'''
+
 class Node:
     def __init__(self,data=None):
         self.data=data
@@ -14,6 +29,7 @@ class SinglyLinkedList:
             print("Appended!")
         else:
             temp=self.head
+            #traversing to the end of the list
             while temp.next!=None:
                 temp=temp.next
             temp.next=node
@@ -33,6 +49,7 @@ class SinglyLinkedList:
             return
         else:
             count=1
+            #traversing to the position
             while count<pos:
                 temp = temp.next
                 if not temp:
@@ -51,6 +68,7 @@ class SinglyLinkedList:
             return
         else:
             count=1
+            #traversing to the position
             while count<pos:
                 temp = temp.next
                 if temp is None:
@@ -75,10 +93,12 @@ class SinglyLinkedList:
         if self.head is None:
             print("Empty List")
         else:
+            l=[]
             temp = self.head
             while temp:
-                print(temp.data, sep=' ')
+                l.append(temp.data)
                 temp=temp.next
+            print(*l)
 
 
 s=SinglyLinkedList()

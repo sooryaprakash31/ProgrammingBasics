@@ -1,3 +1,18 @@
+/*
+Linked List:
+
+A linear data structure in which the elements are not stored in
+contiguous memory locations. 
+
+Representation:
+    data|next--> data|next--> data|next
+
+Advantage:
+    - Dynamic size
+    - Memory allocated during runtime and not compile time
+    - Efficient memory utilization
+*/
+
 #include<iostream>
 using namespace std;
 
@@ -5,13 +20,9 @@ class Node{
     public:
     int data;
     Node *next;
-
     Node(){
         data=0;
         next=NULL;
-    }
-    Node(int d){
-        data=d;
     }
 };
 
@@ -34,6 +45,7 @@ class SinglyLinkedList{
         }
         else{
             Node * ptr = head;
+            //traversing to the end of the list
             while(ptr->next!=NULL){
                 ptr=ptr->next;
             }
@@ -65,7 +77,8 @@ class SinglyLinkedList{
                 cout<<"Inserted\n";
             }
             else{
-                while(count!=pos){
+                //traversing to the position
+                while(count<pos){
                 ptr=ptr->next;
                 if(ptr==NULL){
                     cout<<"Position does not exist\n";
@@ -93,7 +106,10 @@ class SinglyLinkedList{
                     head=head->next;
                     cout<<"Deleted!\n";
                     return;
-                }else{
+                }
+                
+                else{
+                    //traversing to the position
                     while(count!=pos){
                     ptr=ptr->next;
                     if(ptr==NULL){
@@ -110,12 +126,24 @@ class SinglyLinkedList{
 
     }
 
+    void getLength(){
+        int total=0;
+        Node *ptr=head;
+        while(ptr!=NULL)
+        {
+        total++;
+        ptr=ptr->next;
+        }
+        cout<<"\nLength: "<<total<<endl;
+    }
+
     //prints all the nodes
     void printAll(){
         if(head==NULL){
             cout<<"Empty list\n";
         }
         else{
+            //Traversing the nodes until the next of a node is NULL
             Node *ptr= head;
             while(ptr!=NULL){
                 cout<<ptr->data<<" ";
@@ -133,7 +161,7 @@ int main(){
     int data, choice;
 
     do{
-        cout<<"\n1.Append\t2.Prepend\t3.InsertAt\t4.DeleteAt\t5.PrintAll\t6.Stop\n";
+        cout<<"\n1.Append\t2.Prepend\t3.InsertAt\t4.DeleteAt\t5.PrintAll\t6.Length\t7.Stop\n";
         cin>>choice;
         Node * node = new Node();
         int position;
@@ -165,6 +193,9 @@ int main(){
             s.printAll();
             break;
         case 6:
+            s.getLength();
+            break;
+        case 7:
             break;
         default:
             break;
