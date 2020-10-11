@@ -10,6 +10,11 @@ Representation:
 Access--> Node 2 ---------------------------- |-> data|next
           Node 1 ------------- |-> data|next -|     
           Node 0 -- data|next -|
+
+Main operations:
+- Push()
+- Pop()
+- Peak()
 */
 
 #include<iostream>
