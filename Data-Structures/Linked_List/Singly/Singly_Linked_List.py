@@ -79,6 +79,48 @@ class SinglyLinkedList:
             temp.next = nextNode.next
             print("Deleted!")
 
+    #swaps two nodes in the list
+    def swapTwoNodes(self,x,y):
+        if x==y:
+            return
+        prevX=None
+        currX=self.head
+        while currX and currX.data!=x:
+            prevX = currX
+            currX=currX.next
+        prevY = None
+        currY = self.head
+
+        while currY and currY.data!=y:
+            prevY=currY
+            currY=currY.next
+
+        #if x or y is not present
+        if currX is None or currY is None:
+            print("Enter valid elements")
+            return
+        #if x is at the head
+        if prevX is None:
+            self.head = currY
+        else:
+            prevX.next = currY
+        #if y is at the head
+        if prevY is None:
+            self.head = currX
+        else:
+            prevY.next = currX
+        
+        currX.next, currY.next = currY.next, currX.next 
+        print("Nodes swapped! ")
+        
+    #deletes all the nodes in the linked list
+    def deleteAll(self):
+        temp = self.head
+        while temp:
+            nextNode = temp.next
+            del temp.data
+            temp = nextNode
+
     #returns the length of the list
     def getLength(self):
         temp = self.head
@@ -104,7 +146,7 @@ class SinglyLinkedList:
 s=SinglyLinkedList()
 choice = 0
 while True:
-    print("1.Append\t2.Prepend\t3.InsertAt\t4.DeleteAt\t5.PrintAll\t6.Length\t7.Stop")
+    print("1.Append\t2.Prepend\t3.InsertAt\t4.DeleteAt\t5.SwapTwoNodes\t6.PrintAll\t7.Length\t8.Stop")
     choice = int(input("Enter choice: "))
     node = Node()
     if choice==1:
@@ -121,10 +163,13 @@ while True:
         pos = int(input("Enter position "))
         s.deleteAt(pos)
     elif choice==5:
-        s.printAll()
+        x,y = map(int, input("Enter two values").split())
+        s.swapTwoNodes(x,y)
     elif choice==6:
-        s.getLength()
+        s.printAll()
     elif choice==7:
+        s.getLength()
+    elif choice==8:
         break
     else:
         print("Invalid choice")

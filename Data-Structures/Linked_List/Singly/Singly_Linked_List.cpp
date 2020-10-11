@@ -107,7 +107,6 @@ class SinglyLinkedList{
                     cout<<"Deleted!\n";
                     return;
                 }
-                
                 else{
                     //traversing to the position
                     while(count!=pos){
@@ -120,12 +119,55 @@ class SinglyLinkedList{
                     }
                     ptr->next=ptr->next->next;
                     cout<<"Deleted! \n";
-                }
-                
+                }       
         }
-
     }
 
+    void swapTwoNodes(int x, int y){
+        if(x==y){
+            return;
+        }
+        Node * prevX = NULL;
+        Node * currX = head;
+        //finds the node with x value as data
+        while(currX && currX->data!=x){
+            prevX = currX;
+            currX=currX->next;
+        }
+        
+        Node * prevY = NULL;
+        Node * currY = head;
+        //finds the node with y value as data
+        while(currY && currY->data!=y){
+            prevY = currY;
+            currY=currY->next;
+        }
+        //if x is at the head
+        if(prevX==NULL){
+            head = currY;
+        }else{
+            prevX->next = currY;
+        }
+        
+        //if x or y is not present
+        if (currX==NULL||currY==NULL){
+            cout<<"Enter valid elements";
+            return;
+        }
+        //if y is at the head
+        if(prevY==NULL){
+            head = currX;
+        }else{
+            prevY->next = currX;
+        }
+
+        Node *temp = currY->next;
+        currY->next = currX->next;
+        currX->next = temp;
+        cout<<"Nodes swapped!\n";
+    }
+
+    //prints the length of the linked list
     void getLength(){
         int total=0;
         Node *ptr=head;
@@ -135,6 +177,18 @@ class SinglyLinkedList{
         ptr=ptr->next;
         }
         cout<<"\nLength: "<<total<<endl;
+    }
+
+    //deletes the entire linked list
+    void deleteAll(){
+        Node * ptr=head;
+        Node * next;
+        while(ptr!=NULL){
+            next = ptr->next;
+            free(ptr);
+            ptr=next;
+        }
+        head=NULL;
     }
 
     //prints all the nodes
@@ -159,9 +213,8 @@ int main(){
 
     SinglyLinkedList s;
     int data, choice;
-
     do{
-        cout<<"\n1.Append\t2.Prepend\t3.InsertAt\t4.DeleteAt\t5.PrintAll\t6.Length\t7.Stop\n";
+        cout<<"\n1.Append\t2.Prepend\t3.InsertAt\t4.DeleteAt\t5.SwapTwoNodes\t6.PrintAll\t7.Length\t8.Stop\n";
         cin>>choice;
         Node * node = new Node();
         int position;
@@ -190,17 +243,24 @@ int main(){
             s.deleteNode(position);
             break;
         case 5:
-            s.printAll();
+            int x,y;
+            cout<<"Enter two values ";
+            cin>>x>>y;
+            s.swapTwoNodes(x,y);
+            
             break;
         case 6:
-            s.getLength();
+            s.printAll();
             break;
         case 7:
+            s.getLength();
+            break;
+        case 8:
             break;
         default:
             break;
         }
-    }while(choice!=6);
+    }while(choice!=8);
     return 0;
 }
 
