@@ -12,6 +12,7 @@ This repository contains the implementations of common Data structures and algor
 - Linked List
   - Singly Linked List
 - Stack
+- Queue
 
 ## Algorithms
 
