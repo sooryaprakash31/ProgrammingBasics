@@ -1,3 +1,22 @@
+/*
+Queue:
+
+- A linear data structure which follows a particular order in which
+the operations are performed.
+- FIFO (Last In First Out)
+
+Representation:
+
+Rear--> Node 2 ---------------------------- |-> data|next
+        Node 1 ------------- |-> data|next -|     
+Front-> Node 0 -- data|next -|
+
+Main operations:
+- Enqueue()
+- Dequeue()
+*/
+
+
 #include<iostream>
 using namespace std;
 
