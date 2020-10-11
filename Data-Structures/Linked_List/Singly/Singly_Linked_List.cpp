@@ -11,6 +11,17 @@ Advantage:
     - Dynamic size
     - Memory allocated during runtime and not compile time
     - Efficient memory utilization
+
+Operations:
+
+1. Append()
+2. Prepend()
+3. InsertNodeAT()
+4. DeleteNodeAt()
+5. DeleteAll()
+6. SwapTwoNodes()
+7. PrintAll()
+8. GetLength()
 */
 
 #include<iostream>
@@ -95,7 +106,7 @@ class SinglyLinkedList{
     }
 
     //deletes the node at a position
-    void deleteNode(int pos){
+    void deleteNodeAt(int pos){
         if(head==NULL){
             cout<<"Position does not exist\n";
         }
@@ -240,7 +251,7 @@ int main(){
         case 4:
             cout<<"Enter position: ";
             cin>>position;
-            s.deleteNode(position);
+            s.deleteNodeAt(position);
             break;
         case 5:
             int x,y;

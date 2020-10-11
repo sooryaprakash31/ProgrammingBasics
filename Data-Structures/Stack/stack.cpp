@@ -11,10 +11,10 @@ Access--> Node 2 ---------------------------- |-> data|next
           Node 1 ------------- |-> data|next -|     
           Node 0 -- data|next -|
 
-Main operations:
-- Push()
-- Pop()
-- Peak()
+Operations:
+1. Push()
+2. Pop()
+3. GetPeek()
 */
 
 #include<iostream>
@@ -64,7 +64,7 @@ class Stack{
     }
 
     //returns the data of the node at the top
-    int peek(){
+    int getPeek(){
         if(head==NULL){
             cout<<"Empty list\n";
             return -1;
@@ -96,9 +96,9 @@ int main(){
                 }
                 break;
             case 3:
-                int result = s.peek();
+                int result = s.getPeek();
                 if(result!=-1){
-                    cout<<"Peek element is "<<s.peek();
+                    cout<<"Peek element is "<<s.getPeek();
                 }
                 break;
             case 4:

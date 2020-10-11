@@ -11,6 +11,18 @@ Advantage:
     - Dynamic size
     - Memory allocated during runtime and not compile time
     - Efficient memory utilization
+
+Operations:
+
+1. Append()
+2. Prepend()
+3. InsertNodeAT()
+4. DeleteNodeAt()
+5. DeleteAll()
+6. SwapTwoNodes()
+7. PrintAll()
+8. GetLength()
+
 '''
 
 class Node:

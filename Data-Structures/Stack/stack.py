@@ -11,10 +11,10 @@ Access--> Node 2 ---------------------------- |-> data|next
           Node 1 ------------- |-> data|next -|     
           Node 0 -- data|next -|
 
-Main operations:
-- Push()
-- Pop()
-- Peak()
+Operations:
+1. Push()
+2. Pop()
+3. GetPeek()
 '''
 
 class Node:
@@ -45,7 +45,7 @@ class Stack:
             return data
     
     #returns the data of the node at the top
-    def peak(self):
+    def getPeek(self):
         if self.head is None:
             print("Empty list")
             return -1
@@ -66,11 +66,11 @@ while True:
     elif choice==2:
         result = s.pop()
         if result!=-1:
-            print(result, " Poppped")
+            print(result, " Popped")
     elif choice==3:
-        result = s.peak()
+        result = s.getPeek()
         if result!=-1:
-            print("Peak is ",result)
+            print("Peek is ",result)
     elif choice==4:
         break
     else:

@@ -11,9 +11,11 @@ Rear--> Node 2 ---------------------------- |-> data|next
         Node 1 ------------- |-> data|next -|     
 Front-> Node 0 -- data|next -|
 
-Main operations:
-- Enqueue()
-- Dequeue()
+Operations:
+1. Enqueue()
+2. Dequeue()
+3. GetFront()
+4. GetRear()
 '''
 
 
