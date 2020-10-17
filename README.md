@@ -8,6 +8,10 @@ This repository contains the implementations of common Data structures and algor
 - C++
 - Python
 
+## Object Oriented Programming
+- Class and Objects
+- Inheritance
+
 ## Data Structures
 - Linked List
   - Singly Linked List
