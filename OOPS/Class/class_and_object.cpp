@@ -6,11 +6,11 @@ Class:
     - The members of a class can be accessed using objects.
 
 Object:
+
     - Object is an entity with some characteristics and behaviour.
     - Object is an instance of a class and used to access the members of a class.
     - Memory for a class is allocated only when the class is instantiated 
       i.e object for the class is created
-
 */
 
 #include<iostream>
@@ -56,3 +56,16 @@ int main(){
 
     return 0;
 }
+
+/*
+
+Output:
+------
+
+Constructor
+Enter name and age John 30 
+
+Name: John Age: 30
+Destructor
+
+*/
