@@ -2,7 +2,7 @@
 Inheritance:
 
     - Inheritance is a OOP concept of reusing the properties of a class
-      without completely writing them again in several classes.
+      without completely writing them again in other classes.
     - Enables Code Reusability
 
     Base class:
