@@ -8,16 +8,8 @@ Access specifiers or Access modifiers:
       iii) protected
     - Default access specifier is private
         
-Access modes:
 
-    - The mode in which the child class is inherited from its parent class
-    - There are three types of access modes
-        i) public
-       ii) private
-      iii) protected
-
-
-public - Access mode: 
+public: 
 
     If the child class inherits from parent class using public mode, then
     
@@ -28,7 +20,7 @@ public - Access mode:
     | private members   ---|--->  Can't be inherited  |
     
 
-protected - Access mode: 
+protected: 
 
     If the child class inherits from parent class using protected mode, then
     
@@ -39,7 +31,7 @@ protected - Access mode:
     | private members   ---|--->  Can't be inherited  |
 
 
-private - Access mode:
+private:
 
     If the child class inhertis from parent class using private mode, then
 
@@ -67,7 +59,7 @@ class Parent{
 
 };  
 
-//inherits using public mode
+//inherits using public specifier
 class ChildPublic : public Parent{
 
     /*
@@ -78,7 +70,7 @@ class ChildPublic : public Parent{
 
 };
 
-//inherits using protected mode
+//inherits using protected specifier
 class ChildProtected: protected Parent{
 
     /*
@@ -89,7 +81,7 @@ class ChildProtected: protected Parent{
 
 };
 
-//inherits using private mode
+//inherits using private specifier
 class ChildPrivate: private Parent{
 
     /*
