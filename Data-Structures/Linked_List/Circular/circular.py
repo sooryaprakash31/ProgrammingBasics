@@ -25,17 +25,79 @@ class CircularLinkedList:
     #prepends the node at the beginning of the list
     def prepend(self, node):
 
-        if self.head is not None:
-            temp = self.head
-            while temp!=self.head:
-                temp = temp.next
-            temp.next = node
-
-        node.next = self.head
-        self.head=node
+        if self.head is None:
+            self.head = node
+            node.next = self.head
+        else:
+            ptr = self.head
+            while ptr.next != self.head:
+                ptr = ptr.next
+            ptr.next = node
+            node.next = self.head
+            self.head=node
         
         print("Prepended!")
 
+    #inserts node at a position
+    def insertAt(self,node,pos):
+        if self.head is None:
+            print("Position does not exist")
+            return
+        else:
+            if pos == 0:
+                ptr = self.head
+                while ptr.next!=self.head:
+                    ptr = ptr.next
+                ptr.next = node
+                node.next = self.head
+                self.head = node
+            else:
+                ptr = self.head
+                count=1
+                #traversing to the position
+                while count<pos:
+                    ptr = ptr.next
+                    if ptr==self.head:
+                        print("Position does not exist")
+                        return
+                    count+=1
+                
+                node.next = ptr.next
+                ptr.next = node
+
+        print("Inserted!")
+
+    #deletes the node at a position
+    def deleteAt(self,pos):
+        if self.head is None:
+            print("Position does not exist")
+            return
+        else:
+            if pos == 0:
+                ptr = self.head
+                while ptr.next != self.head:
+                    ptr = ptr.next
+                ptr.next = self.head.next
+                self.head = self.head.next
+            else:
+                ptr = self.head
+                count = 1
+                while count<pos:
+                    ptr = ptr.next
+                    if ptr==self.head:
+                        print("Position does not exist")
+                        return
+                    count+=1
+
+                temp = ptr.next
+                if temp == self.head:
+                    ptr.next = self.head
+                else:
+                    ptr.next = temp.next
+        print("Deleted!")
+
+
+    #prints all the nodes in the list
     def printAll(self):
         if self.head is None:
             print("Empty List")
@@ -63,6 +125,13 @@ while True:
     elif choice == 2:
         node.data = int(input("Enter data "))
         c.prepend(node)
+    elif choice == 3:
+        node.data = int(input("Enter data "))
+        positon = int(input("Enter position "))
+        c.insertAt(node,positon)
+    elif choice == 4:
+        positon = int(input("Enter position "))
+        c.deleteAt(positon)
     elif choice == 5:
         c.printAll()
     else:

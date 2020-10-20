@@ -63,9 +63,9 @@ class CircularLinkedList{
         
         if(head!=NULL){
             Node * ptr = head;
-            while(ptr->next!=head){
+             do{
                 ptr=ptr->next;
-            }
+            }while(ptr!=head);
             ptr->next = node;   
         }
         node->next=head;
@@ -81,13 +81,18 @@ class CircularLinkedList{
             return;
         }
         else{
-            Node *ptr = head;
-            int count=1;
             if(pos==0){
+                Node * ptr = head;
+                do{
+                    ptr=ptr->next;
+                }while(ptr!=head);
+                ptr->next = node;
                 node->next=head;
                 head=node;
             }
             else{
+                Node *ptr = head;
+                int count=1;
                 //traversing to the position
                 while(count<pos){
                 ptr=ptr->next;
@@ -112,7 +117,13 @@ class CircularLinkedList{
         }
         else{
                 if(pos==0){
+                    Node * ptr = head;
+                    do{
+                        ptr=ptr->next;
+                    }while(ptr!=head);
+                    ptr->next = head->next;   
                     head=head->next;
+
                 }
                 else{
                     int count=1;
