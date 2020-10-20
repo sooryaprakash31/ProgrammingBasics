@@ -87,15 +87,15 @@ class DoublyLinkedList{
             cout<<"Position does not exist\n";
         }
         else{
-            Node * ptr = head;
-            int count = 1;
             if(pos==0){
                head->previous = node;
                 node->next = head;
                 head = node; 
-                cout<<"Inserted\n";
+
             }
             else{
+                Node * ptr = head;
+                int count = 1;
                 //traversing to the position
                 while(count<pos){
                     ptr=ptr->next;
@@ -108,11 +108,38 @@ class DoublyLinkedList{
                 node->next = ptr->next;
                 node->previous = ptr;
                 ptr->next = node;
-                cout<<"Inserted\n";
-            }
-            
+            }   
         }
+        cout<<"Inserted\n";
+    }
 
+    //deletes the node at a position
+    void deleteAt(int pos){
+        if (head==NULL){
+            cout<<"Position does not exist\n";
+        }
+        else{
+            if(pos==0){
+                head = head->next;
+                head->previous = NULL;
+            }
+            else{
+                Node * ptr = head;
+                int count = 1;
+                //traversing to the position
+                while(count!=pos){
+                    ptr=ptr->next;
+                    if(ptr==NULL){
+                        cout<<"Position does not exist\n";
+                        return;
+                    }
+                    count++;
+                    }
+                    ptr->next = ptr->next->next;
+                    ptr->next->previous = ptr;
+            }
+        }
+        cout<<"Deleted!\n";
     }
 
     //prints all the nodes
@@ -138,7 +165,7 @@ int main(){
     DoublyLinkedList d;
     int choice,data,position;
     do{
-        cout<<"\n1. Append\t2. Prepend\t3.InsertAt\t5. PrintAll\t6.Stop\n";
+        cout<<"\n1. Append\t2. Prepend\t3.InsertAt\t4. DeleteAt\t5. PrintAll\t6.Stop\n";
         cin>>choice;
         Node * node = new Node();
         switch (choice)
@@ -159,6 +186,11 @@ int main(){
             cout<<"\nEnter position ";
             cin>>position;
             d.insertAt(node,position);
+            break;
+        case 4:
+            cout<<"Enter position ";
+            cin>>position;
+            d.deleteAt(position);
             break;
         case 5:
             d.printAll();

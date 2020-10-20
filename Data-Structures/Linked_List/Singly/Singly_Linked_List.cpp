@@ -5,6 +5,7 @@ A linear data structure in which the elements are not stored in
 contiguous memory locations. 
 
 Representation:
+
     data|next--> data|next--> data|next
 
 Advantage:
