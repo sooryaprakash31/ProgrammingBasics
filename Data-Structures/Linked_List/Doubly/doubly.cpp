@@ -1,3 +1,30 @@
+/*
+Doubly Linked List:
+
+    - A linear data structure in which the elements are not stored in
+      contiguous memory locations.
+    - Doubly Linked List contains an extra pointer to keep track of the previous
+      node to a particular node.
+
+Representation:
+
+    previous|data|next <---> previous|data|next <---> previous|data|next
+
+Advantages:
+    - Can be traversed from both direction
+    - Deletion of node is efficient if the pointer to node is known
+
+Operations:
+
+1. Append()
+2. Prepend() 
+3. InsertAt()
+4. DeleteAt()
+5. PrintAll()
+
+*/
+
+
 #include<iostream>
 using namespace std;
 
