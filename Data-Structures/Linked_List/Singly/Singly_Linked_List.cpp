@@ -52,7 +52,7 @@ class SinglyLinkedList{
     void appendNode(Node * node){
         if(head==NULL){
             head=node;
-            cout<<"Successfully appended\n";
+            cout<<"Appended\n";
         }
         else{
             Node * ptr = head;
