@@ -1,3 +1,17 @@
+'''
+Circular Linked List:
+
+    - A linear data structure in which the elements are not stored in
+    contiguous memory locations.
+    - The last node will point to the head or first node thus forming a circular list
+
+Representation:
+
+    |--> data|next--> data|next--> data|next --|
+    |------------------------------------------|  
+
+'''
+
 class Node:
     def __init__(self,data=None):
         self.data=data
