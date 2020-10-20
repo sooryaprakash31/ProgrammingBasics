@@ -69,7 +69,7 @@ class DoublyLinkedList{
             node->previous = ptr;
             node->next = NULL;
         }
-        cout<<"\nAppended";
+        cout<<"Appended!\n";
     }
 
     //prepends the node at the beginning of the list
@@ -78,7 +78,41 @@ class DoublyLinkedList{
         head->previous = node;
         node->next = head;
         head = node;
-        cout<<"\nPrepended!";
+        cout<<"Prepended!\n";
+    }
+
+    //inserts node at a position
+    void insertAt(Node * node, int pos){
+        if (head==NULL){
+            cout<<"Position does not exist\n";
+        }
+        else{
+            Node * ptr = head;
+            int count = 1;
+            if(pos==0){
+               head->previous = node;
+                node->next = head;
+                head = node; 
+                cout<<"Inserted\n";
+            }
+            else{
+                //traversing to the position
+                while(count<pos){
+                    ptr=ptr->next;
+                    if(ptr==NULL){
+                        cout<<"Position does not exist\n";
+                        return;
+                    }
+                    count++;
+                }
+                node->next = ptr->next;
+                node->previous = ptr;
+                ptr->next = node;
+                cout<<"Inserted\n";
+            }
+            
+        }
+
     }
 
     //prints all the nodes
@@ -102,9 +136,9 @@ class DoublyLinkedList{
 int main(){
 
     DoublyLinkedList d;
-    int choice,data;
+    int choice,data,position;
     do{
-        cout<<"\n1. Append\t2. Prepend\t4. PrintAll\t8.Stop\n";
+        cout<<"\n1. Append\t2. Prepend\t3.InsertAt\t5. PrintAll\t6.Stop\n";
         cin>>choice;
         Node * node = new Node();
         switch (choice)
@@ -119,13 +153,20 @@ int main(){
             cin>>node->data;
             d.prependNode(node);
             break;
-        case 4:
+        case 3:
+            cout<<"Enter data ";
+            cin>>node->data;
+            cout<<"\nEnter position ";
+            cin>>position;
+            d.insertAt(node,position);
+            break;
+        case 5:
             d.printAll();
             break;
         default:
             break;
         }
-    }while(choice!=8);
+    }while(choice!=6);
     
     return 0;
 }
