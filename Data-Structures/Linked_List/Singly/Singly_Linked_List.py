@@ -55,40 +55,47 @@ class SinglyLinkedList:
 
     #inserts node at a position
     def insertAt(self, node, pos):
-        temp = self.head
         if self.head is None:
             print("Position does not exist")
             return
         else:
-            count=1
-            #traversing to the position
-            while count<pos:
-                temp = temp.next
-                if not temp:
-                    print("Position does not exist")
-                    return
-                count+=1
-            node.next = temp.next
-            temp.next = node
+            if pos == 0:
+               node.next = self.head
+               self.head=node 
+            else:
+                temp = self.head
+                count=1
+                #traversing to the position
+                while count<pos:
+                    temp = temp.next
+                    if not temp:
+                        print("Position does not exist")
+                        return
+                    count+=1
+                node.next = temp.next
+                temp.next = node
             print("Inserted!")
 
     #deletes node at a position
     def deleteAt(self,pos):
-        temp=self.head
         if self.head is None:
             print("Position does not exist")
             return
         else:
-            count=1
-            #traversing to the position
-            while count<pos:
-                temp = temp.next
-                if temp is None:
-                    print("Position does not exist")
-                    return
-                count+=1
-            nextNode = temp.next
-            temp.next = nextNode.next
+            if pos == 0:
+                self.head = self.head.next
+            else:
+                temp=self.head
+                count=1
+                #traversing to the position
+                while count<pos:
+                    temp = temp.next
+                    if temp is None:
+                        print("Position does not exist")
+                        return
+                    count+=1
+                nextNode = temp.next
+                temp.next = nextNode.next
             print("Deleted!")
 
     #swaps two nodes in the list
