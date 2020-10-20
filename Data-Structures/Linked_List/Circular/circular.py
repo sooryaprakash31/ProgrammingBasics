@@ -10,6 +10,13 @@ Representation:
     |--> data|next--> data|next--> data|next --|
     |------------------------------------------|  
 
+Operations:
+
+1. Append()
+2. Prepend() 
+3. InsertAt()
+4. DeleteAt()
+5. PrintAll() 
 '''
 
 class Node:
