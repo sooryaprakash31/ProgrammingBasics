@@ -1,3 +1,18 @@
+/*
+Circular Linked List:
+
+    - A linear data structure in which the elements are not stored in
+    contiguous memory locations.
+    - The last node will point to the head or first node thus forming a circular list
+
+Representation:
+
+    |--> data|next--> data|next--> data|next --|
+    |------------------------------------------|  
+
+*/
+
+
 #include<iostream>
 using namespace std;
 
@@ -71,7 +86,6 @@ class CircularLinkedList{
             if(pos==0){
                 node->next=head;
                 head=node;
-                cout<<"Inserted\n";
             }
             else{
                 //traversing to the position
@@ -85,10 +99,10 @@ class CircularLinkedList{
                 }
                 node->next = ptr->next;
                 ptr->next=node;
-                cout<<"Inserted! \n";
+                
             }
-            
         }
+        cout<<"Inserted! \n";
     }
 
     //deletes the node at a position
@@ -99,8 +113,6 @@ class CircularLinkedList{
         else{
                 if(pos==0){
                     head=head->next;
-                    cout<<"Deleted!\n";
-                    return;
                 }
                 else{
                     int count=1;
@@ -123,9 +135,9 @@ class CircularLinkedList{
                         ptr->next=temp->next;
                     }
                     free(temp);
-                    cout<<"Deleted! \n";
                 }       
         }
+        cout<<"Deleted!\n";
     }
 
     //prints all the nodes
