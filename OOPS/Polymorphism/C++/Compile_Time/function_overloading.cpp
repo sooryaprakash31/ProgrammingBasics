@@ -51,7 +51,7 @@ int main()
 {
     int choice;
     float length, breadth;
-    cout<<"Area\n1.Square\t2.Rectangle\t3.Triangle\n";
+    cout<<"\nArea\n1.Square\t2.Rectangle\t3.Triangle\n";
     cin>>choice;
     switch (choice)
     {
