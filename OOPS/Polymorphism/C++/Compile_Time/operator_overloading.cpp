@@ -1,3 +1,27 @@
+/*
+Polymorphism:
+
+    - Polymorphism - Many forms
+    - It allows an entity such as a variable, a function, or an object to have more than one form.
+
+Compile Time Polymorphism:
+
+    - Overloading is a compile time polymorphism where more than one method is having the same name 
+      but with the different number of parameters or the type of the parameters.
+    - It is acheived by function overloading and operator overloading
+
+Operator Overloading:
+    - The ability to provide the operators with a special meaning for a data type.
+    - For example, the addition operator '+' can be overloaded to perform concatenation of two strings
+
+    - The following operators can not be overloaded
+        i) . (dot) 
+        ii) :: (scope resolution)
+        iii) ?: (ternary)
+        iv) sizeof (sizeof())
+*/
+
+
 #include<iostream>
 using namespace std;
 
