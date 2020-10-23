@@ -1,3 +1,14 @@
+/*
+Encapsulation:
+
+    - The concept of restricting access to the sensitive properties of a class.
+    - Encapsulation can be achieved by making the properties which we want to restrict access as private members.
+
+
+    The access to members of a class can be restricted by declaring them under private access specifier
+*/
+
+
 #include<iostream>
 using namespace std;
 
