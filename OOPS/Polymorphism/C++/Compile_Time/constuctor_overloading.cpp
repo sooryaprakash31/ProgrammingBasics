@@ -50,12 +50,12 @@ int main(){
 
     //calls default constructor
     Constructor c1;
-    
+
     //calls parameterized constructor
     Constructor c2(10);
 
     //calls copy constructor
-    Constructor c3(c2);
+    Constructor c3 = c2;
 
     return 0;
 }
