@@ -4,12 +4,11 @@ Polymorphism:
     - Polymorphism - Many forms
     - It allows an entity such as a variable, a function, or an object to have more than one form.
 
-Compile Time Polymorphism:
+Operator Overloading:
 
-    - Overloading is a compile time polymorphism where more than one method is having the same name 
-      but with the different number of parameters or the type of the parameters.
-
+    - The ability to provide the operators with a special meaning for a data type.
     - Operator overloading is achieved using the special functions available in python.
+    
     - Docs: https://docs.python.org/3.8/reference/datamodel.html#special-method-names
 '''
 
@@ -41,5 +40,12 @@ c2 = Complex(3,4)
 c3 = c1+c2
 
 #c3 is also an object of class Complex.
-#The print() statement calls the __str__()
-print(c3)
+#The print() statement calls the __str__() and sends c3 as argument
+print("The Complex number is",c3)
+
+
+'''
+Output:
+
+The Complex number is 5+i7
+'''
