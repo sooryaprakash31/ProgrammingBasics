@@ -16,7 +16,7 @@ def binary_search(arr,l,h,key):
     
     #Always l must be less than h, 
     #otherwise leads to out of bounds error
-    if l<h:
+    if l<=h:
         
         #calculating middle element of the array
         mid=(l+h)//2
