@@ -11,6 +11,9 @@ This repository contains the implementations of common Data structures and algor
 ## Object Oriented Programming
 - Class and Objects
 - Inheritance
+- Polymorphism
+- Encapsulation
+- Exception Handling
 
 ## Data Structures
 - Linked List
@@ -27,6 +30,7 @@ This repository contains the implementations of common Data structures and algor
   - Binary search
   - Jump search
   - Interpolation search
+  - Exponential search
 
 - Sorting
   - Selection sort
