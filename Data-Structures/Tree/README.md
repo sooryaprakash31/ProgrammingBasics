@@ -22,6 +22,7 @@
     Unlabelled Nodes: T(n) = (2nCn/n+1)*n!_
     
 - Height vs Nodes
+  - For Binary trees
     - If height h is given,
         
         _Minimum number of nodes n = h+1<br> 
@@ -32,4 +33,13 @@
         _Minimum number of nodes h = n-1<br> 
         Maximum number of nodes h = <img src="https://latex.codecogs.com/gif.latex?\fn_jvn&space;\log_{2}(n&plus;1)-1" height=15 align=center>_
         
-    
+  - For Strict m-ary trees<br>
+    - If height h is given,
+
+        _Minimum number of nodes n = mh+1<br>
+        Maximum number of nodes n = <img src="https://latex.codecogs.com/gif.latex?\fn_jvn&space;m^{h&plus;1}-1/m-1" height=15 align=center>_
+
+    - If nodes n is given,
+
+        _Minimum height h = <img src="https://latex.codecogs.com/gif.latex?\fn_jvn&space;\log_{m}[n(m-1)&plus;1]-1" height=15 align=center><br>
+        Maximum height h = n-1/m_
