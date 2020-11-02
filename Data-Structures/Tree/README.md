@@ -13,7 +13,9 @@
 7. External Nodes - Leaf nodes
 8. Forest - Group of Trees
 
-## Important Formula
+
+
+## Analysis
 
 - Catalan Number - The number of different Binary trees that can be generated from n (number of nodes)
   
