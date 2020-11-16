@@ -1,9 +1,7 @@
 #include <iostream>
 using namespace std;
 
-template <typename S>
-
-S Max(S x, S y)
+template <typename S> S Max(S x, S y)
 {
     return x > y ? x : y;
 }
