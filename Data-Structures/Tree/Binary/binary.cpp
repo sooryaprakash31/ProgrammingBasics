@@ -19,7 +19,7 @@ public:
 
 class Tree
 {
-public:
+    public:
     Node *root = new Node();
     void createTree()
     {
@@ -62,9 +62,33 @@ public:
         {
             return;
         }
-        cout << node->data << "\t";
+        cout << node->data << " ";
         preorder(node->left);
         preorder(node->right);
+    }
+
+    void inorder(Node *node)
+    {
+        if (node == NULL)
+        {
+            return;
+        }
+
+        preorder(node->left);
+        cout << node->data << " ";
+        preorder(node->right);
+    }
+    
+    void postrder(Node *node)
+    {
+        if (node == NULL)
+        {
+            return;
+        }
+
+        preorder(node->left);
+        preorder(node->right);
+        cout << node->data << " ";
     }
 };
 
@@ -75,18 +99,24 @@ int main()
     Tree t;
     do
     {
-        cout << "1. Add 2.Print 3.Stop\n";
+        cout << "\n1. Add 2.Print 3.Stop\n";
         cin >> choice;
         switch (choice)
         {
+
         case 1:
             t.createTree();
             break;
+
         case 2:
+            cout<<"Preorder traversal\n";
             t.preorder(t.root);
+            cout<<"\nInorder traversal\n";
+            t.inorder(t.root);
+            cout<<"\nPostorder traversal\n";
+            t.postrder(t.root);
             break;
-        default:
-            break;
+
         }
 
     } while (choice != 3);
