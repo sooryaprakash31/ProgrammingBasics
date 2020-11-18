@@ -3,7 +3,12 @@ First Come First Serve (FCFS):
     
     - Simplest and easiest process scheduling algorithm
     - The CPU is allotted to the processed in the order they request it
+    - Non-preemptive scheduling algorithm
 
+Disadvantages:
+    - Average waiting time is high
+    - Processes have to wait though their burst time is less (Convoy Effect)
+    
     Turn Around Time = Completion Time - Arrival Time
     
     Waiting Time = Turn Around Time - Burst Time
