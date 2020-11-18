@@ -1,5 +1,5 @@
 # Process Scheduling
-    - First Come First Serve
+- First Come First Serve
   
 
 # Terminology
