@@ -1,5 +1,7 @@
 # Tree
 
+Tree is a non-linear data structure in which the elements are stored in hierarchy structure 
+
 ## Terminology
 1. Root <br>
     The node which does not have an incoming edge
