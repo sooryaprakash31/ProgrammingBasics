@@ -4,11 +4,13 @@ Greatest Common Divisor:
     - GCD of two numbers a and b is the largest possible number that divides both the a and b
 
 Naive approach:
+
     - Loop from 1 to the minimum of a and b. (GCD must be less than both a and b)
     - Check every number if it divides both a and b
     - return the greatest value that divides both a and b
 
 Efficient approach:
+
     - Euclidean Algorithm:
         - The Euclidean algorithm is based on the principle that the greatest common divisor of two numbers does not change 
           if the larger number is replaced by its difference with the smaller number. 
