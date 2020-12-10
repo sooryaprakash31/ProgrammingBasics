@@ -5,7 +5,7 @@ Greatest Common Divisor:
 
 Naive approach:
     - Loop from 1 to the minimum of a and b. (GCD must be less than both a and b)
-    - Checking every number if it divides both a and b
+    - Check every number if it divides both a and b
     - return the greatest value that divides both a and b
 
 Efficient approach:
