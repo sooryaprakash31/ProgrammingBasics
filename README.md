@@ -38,3 +38,14 @@ This repository contains the implementations of common Data structures and algor
   - Bubble sort
   - Merge sort
   - Quick sort
+
+- Graph
+  - Breadth First Search
+  - Depth First Search
+  - Dijkstra's Shortest Path
+
+
+## Problems
+
+- Fibonacci
+- GCD
