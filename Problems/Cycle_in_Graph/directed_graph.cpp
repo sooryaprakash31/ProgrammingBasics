@@ -14,7 +14,6 @@ Algorithm:
 */
 
 
-
 #include<iostream>
 #include<list>
 using namespace std;
@@ -38,45 +37,58 @@ class Graph{
         }
 
         bool isCyclic(){
-            
+            //create visited to store visited status and
+            //recursionStack to store the parent vertex    
             bool *visited = new bool[V];
-            bool *recusionStack = new bool[V];
+            bool *recursionStack = new bool[V];
 
-
+            //initialize visited and recursionStack with false
             for(int i=0;i<V;i++){
                 visited[i] = false;
-                recusionStack[i] = false;
+                recursionStack[i] = false;
             }
 
-
+            //run loop for every vertex
             for(int i=0;i<V;i++){
-                if(isCyclicUntil(i,visited,recusionStack)){
+
+                // if any of the adjacent vertices of vertex i contains backedge, return true
+                //isCyclicUntil checks if any of the adjacent vertices of i contains backedge
+                if(isCyclicUntil(i,visited,recursionStack)){
                     return true;
                 }
             }
+            // otherwise return false
             return false;
         }
 
-        bool isCyclicUntil(int v, bool visited[], bool recusionStack[]){
+        bool isCyclicUntil(int v, bool visited[], bool recursionStack[]){
+            
+            //the vertex must be unvisited
+            if(visited[v]==false){ 
 
-            if(visited[v]==false){
-
+                //mark it as visited
                 visited[v] = true;
-                recusionStack[v] = true;
+                //push it to recursionStack
+                recursionStack[v] = true;
 
                 list<int>::iterator i;
+
+                //run loop for all its adjacent vertices
                 for(i = adj[v].begin(); i!= adj[v].end();i++){
                     
-                    if(!visited[*i] && isCyclicUntil(*i, visited, recusionStack)){
+                    //if the adjacent vertex i is already visited, then its a backedge. Return true
+                    //isCyclicUntil is called for all the adjacent vertices of i recursively
+                    if(!visited[*i] && isCyclicUntil(*i, visited, recursionStack)){
                         return true;
                     }
-                    else if(recusionStack[*i]){
+                    //if the adjacent vertex i of v is already in recursionStack, then return true
+                    else if(recursionStack[*i]){
                         return true;
                     }
                 }
             }
-
-            recusionStack[v] = false;
+            //remove the vertex from the stack
+            recursionStack[v] = false;
             return false;
         }
 
